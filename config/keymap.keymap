@@ -5,6 +5,28 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
+&zip_mouse_gesture {
+    stroke-size = <150>;
+    idle-timeout-ms = <300>;
+    enable-eager-mode;
+    suppress-movement;
+
+    desktop_right {
+        pattern = <GESTURE_LEFT>;
+        bindings = <&kp LC(RIGHT)>;
+    };
+
+    desktop_left {
+        pattern = <GESTURE_RIGHT>;
+        bindings = <&kp LC(LEFT)>;
+    };
+
+    mission_control {
+        pattern = <GESTURE_UP>;
+        bindings = <&kp LC(UP)>;
+    };
+};
+
 / {
     combos {
         compatible = "zmk,combos";
