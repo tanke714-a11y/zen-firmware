@@ -41,7 +41,6 @@
             bindings = <&mo 7>;
             key-positions = <45 46>;
         };
-
 　　　　　gesture_combo {
             bindings = <&gesture_hold>;
             key-positions = <19 20 21 22>;
