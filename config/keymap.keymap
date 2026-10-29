@@ -28,12 +28,43 @@
 };
 
 / {
+    // Only routed by the Layer 6 listener override. Independent of the
+    // global mouse_gesture activation used by the existing JKL; combo.
+    zip_browser_gesture: zip_browser_gesture {
+        compatible = "zmk,input-processor-mouse-gesture";
+        #input-processor-cells = <0>;
+        always-active;
+        stroke-size = <150>;
+        enable-eager-mode;
+        // Single-stroke patterns execute immediately, never on a later idle timer.
+        idle-timeout-ms = <0>;
+        suppress-movement;
+
+        browser_mb4 {
+            pattern = <GESTURE_RIGHT>;
+            bindings = <&mkp MB4>;
+        };
+
+        browser_mb5 {
+            pattern = <GESTURE_LEFT>;
+            bindings = <&mkp MB5>;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
         Layer_7 {
             bindings = <&mo 7>;
             key-positions = <45 46>;
+        };
+
+        browser_gesture_combo {
+            bindings = <&mo 6>;
+            key-positions = <7 8 9>;
+            layers = <0 1>;
+            timeout-ms = <50>;
+            // Default release: any one of U/I/O released disables Layer 6.
         };
 
         gesture_combo {
@@ -137,7 +168,7 @@
             >;
         };
 
-        layer_6 {
+        browser_gesture {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
