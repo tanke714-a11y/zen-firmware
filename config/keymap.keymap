@@ -42,12 +42,12 @@
 
         browser_mb4 {
             pattern = <GESTURE_RIGHT>;
-            bindings = <&mkp MB4>;
+            bindings = <&kp R>;
         };
 
         browser_mb5 {
             pattern = <GESTURE_LEFT>;
-            bindings = <&mkp MB5>;
+            bindings = <&kp L>;
         };
     };
 
