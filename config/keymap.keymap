@@ -31,12 +31,6 @@
     combos {
         compatible = "zmk,combos";
 
-        bt_clear {
-            bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
-            layers = <2>;
-        };
-
         Layer_7 {
             bindings = <&mo 7>;
             key-positions = <45 46>;
@@ -46,6 +40,21 @@
             bindings = <&gesture_hold>;
             key-positions = <19 20 21 22>;
             layers = <0 1>;
+        };
+
+        LCLK {
+            bindings = <&mkp LCLK>;
+            key-positions = <19 20>;
+        };
+
+        RCLK {
+            bindings = <&mkp RCLK>;
+            key-positions = <20 21>;
+        };
+
+        MCLK {
+            bindings = <&mkp MCLK>;
+            key-positions = <19 20 21>;
         };
     };
 
@@ -85,10 +94,10 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                &mkp LCLK  &mo 4             &mkp RCLK  &trans                 &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp RG(LEFT_BRACKET)  &mkp MB1   &mkp MB3          &mkp MB2   &kp RG(RIGHT_BRACKET)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                &trans     &kp LC(UP_ARROW)  &trans     &trans                 &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                &trans     &trans            &trans     &trans                 &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &mo 4   &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
 
