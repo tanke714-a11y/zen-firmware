@@ -42,7 +42,7 @@
             layers = <0 1>;
         };
 
-        lcld {
+        lclk {
             bindings = <&mkp LCLK>;
             key-positions = <19 20>;
         };
@@ -52,7 +52,7 @@
             key-positions = <20 21>;
         };
 
-        milk {
+        mclk {
             bindings = <&mkp MCLK>;
             key-positions = <19 20 21>;
         };
