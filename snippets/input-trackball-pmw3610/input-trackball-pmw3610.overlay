@@ -1,4 +1,3 @@
-
 #include <dt-bindings/zmk/input_transform.h>
 
 / {
@@ -46,6 +45,16 @@
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
         <&zip_mouse_gesture>,
         <&zip_temp_layer 1 600000>;
+
+    // Overrides run in declaration order. This must precede scroller.
+    browser_gesture {
+        layers = <6>;
+        input-processors =
+            <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP)>,
+            <&zip_browser_gesture>;
+        // No process-next: skip scroller, desktop gestures and auto mouse
+        // processing for this event; preserve them on the normal path.
+    };
 
     scroller {
         layers = <4>;
