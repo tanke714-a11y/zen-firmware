@@ -42,12 +42,12 @@
 
         browser_mb4 {
             pattern = <GESTURE_RIGHT>;
-            bindings = <&kp LG(LEFT_BRACKET)>; // Safari: Back (Command + [)
+            bindings = <&mkp MB4>;
         };
 
         browser_mb5 {
             pattern = <GESTURE_LEFT>;
-            bindings = <&kp LG(RIGHT_BRACKET)>; // Safari: Forward (Command + ])
+            bindings = <&mkp MB5>;
         };
     };
 
